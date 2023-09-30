@@ -20,11 +20,12 @@ class User extends Authenticatable implements MustVerifyEmail
         'username',
         'email',
         'password',
-        'role'
-    ];
-    protected $guarded = [
+        'role',
         'verified',
         'created'
+    ];
+    protected $guarded = [
+        'user_id'
     ];
     protected $hidden = [
         'password',
