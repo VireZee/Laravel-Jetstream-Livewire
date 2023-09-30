@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('profile_photo_path', 2048)->nullable();
             $table->string('created', 40);
             $table->timestamp('email_verified_at')->nullable();
+            $table->string('verified', 40)->nullable();
             $table->rememberToken();
         });
     }
