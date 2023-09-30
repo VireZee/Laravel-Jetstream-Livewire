@@ -13,6 +13,8 @@ use Laravel\Sanctum\HasApiTokens;
 class User extends Authenticatable implements MustVerifyEmail
 {
     use HasApiTokens, HasFactory, HasProfilePhoto, Notifiable, TwoFactorAuthenticatable;
+    protected $table = 'users';
+    protected $primaryKey = 'user_id';
     protected $fillable = [
         'name',
         'username',

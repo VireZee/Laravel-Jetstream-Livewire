@@ -18,14 +18,16 @@ class CreateNewUser implements CreatesNewUsers
             'username' => ['required', 'string', 'max:255', 'unique:users'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => $this->passwordRules(),
-            'role' => ['required', 'string', Rule::in(['Owner', 'CEO', 'Manager', 'HR', 'Employee'])],
+            'role' => ['required', 'string', Rule::in(['Owner', 'CEO', 'Manager', 'HR', 'Employee'])]
         ])->validate();
         return User::create([
             'name' => $input['name'],
             'username' => $input['username'],
             'email' => $input['email'],
             'password' => Hash::make($input['password']),
-            'role' => $input['role']
+            'role' => $input['role'],
+            'verified' => false,
+            'created' => now()->format('d F Y, h:i:s.u A')
         ]);
     }
 }
