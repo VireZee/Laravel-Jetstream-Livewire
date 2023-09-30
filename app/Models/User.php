@@ -21,11 +21,11 @@ class User extends Authenticatable implements MustVerifyEmail
         'email',
         'password',
         'role',
-        'verified',
-        'created'
+        'created',
+        'email_verify_at'
     ];
     protected $guarded = [
-        'user_id'
+        'user_id',
     ];
     protected $hidden = [
         'password',
@@ -38,8 +38,8 @@ class User extends Authenticatable implements MustVerifyEmail
         'username' => 'string',
         'password' => 'hashed',
         'role' => 'string',
-        'verified' => 'boolean',
-        'created' => 'string'
+        'created' => 'string',
+        'email_verified_at' => 'datetime'
     ];
     protected $appends = [
         'profile_photo_url'
