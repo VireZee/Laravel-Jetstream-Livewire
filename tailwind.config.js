@@ -1,4 +1,3 @@
-import defaultTheme from 'tailwindcss/defaultTheme';
 import forms from '@tailwindcss/forms';
 import typography from '@tailwindcss/typography';
 
@@ -11,11 +10,7 @@ export default {
         './resources/views/**/*.blade.php',
     ],
     theme: {
-        extend: {
-            fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.serif],
-            }
-        }
+        extend: {}
     },
     plugins: [forms, typography],
 };
